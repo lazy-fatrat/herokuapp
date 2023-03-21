@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-import time
-import asyncio
-# In[5]:
-
 import panel as pn
 
 import pandas as pd
