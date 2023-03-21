@@ -268,4 +268,4 @@ aqueDAix = pn.template.VanillaTemplate(site="Panel", title="Aque d'Aix", sidebar
                                        accent_base_color=ACCENT_COLOR, header_background=ACCENT_COLOR)
 aqueDAix.main.append(mainFront)
 aqueDAix.sidebar.append(sideFront)
-aqueDAix.show()
+aqueDAix.servable()
