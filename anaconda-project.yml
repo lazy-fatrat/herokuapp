@@ -1,0 +1,59 @@
+# To reproduce: install 'anaconda-project', then 'anaconda-project run'
+name: aquedaixIGW
+description: Counting lamines application with Datashader, Panel, and interact
+maintainers:
+  - Messaadi
+  - Gassier
+
+channels:
+  - conda-forge 
+  - pyviz 
+  - defaults
+  - anaconda
+
+dependencies: &deps
+
+  - notebook 
+  - ipykernel 
+  - nomkl
+  - param 
+  - pyviz_comms 
+  - nbserverproxy
+  - python=3.10
+  - panel=0.14.4
+  - pandas=1.5.3
+  - numpy=1.24.2
+  - holoviews=1.15.4
+  - Pillow
+  - bokeh=2.4.3
+  - tornado
+  - jupyter-panel-proxy
+
+
+
+packages: *deps
+
+commands:
+  dashboard:
+    unix: panel serve App.ipynb
+    supports_http_options: true
+  notebook:
+    notebook: App.ipynb
+  test:
+    unix: pytest --nbsmoke-run -k *.ipynb --ignore envs
+    windows: pytest --nbsmoke-run -k *.ipynb --ignore envs
+    env_spec: test
+  lint:
+    unix: pytest --nbsmoke-lint -k *.ipynb --ignore envs
+    windows: pytest --nbsmoke-lint -k *.ipynb --ignore envs
+    env_spec: test
+
+variables: {}
+downloads: {}
+
+env_specs:
+  default: {}
+  test:
+    packages:
+    - nbsmoke 
+    - pytest 

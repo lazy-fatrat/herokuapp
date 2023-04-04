@@ -1,0 +1,20 @@
+name: aquedaixIGW
+channels:
+  - conda-forge 
+  - pyviz 
+  - defaults
+  - anaconda
+dependencies:
+  - nbserverproxy
+  - python=3.10
+  - panel=0.14.4
+  - pandas=1.5.3
+  - numpy=1.24.2
+  - holoviews=1.15.4
+  - Pillow
+  - bokeh=2.4.3
+  - tornado
+  - jupyter-panel-proxy
+
+  
+  
