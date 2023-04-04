@@ -35,17 +35,17 @@ packages: *deps
 
 commands:
   dashboard:
-    unix: panel serve App.ipynb
+    unix: panel serve App_v2_RW_Cv2.py
     supports_http_options: true
   notebook:
-    notebook: App.ipynb
+    notebook: App_v2_RW_Cv2.py
   test:
-    unix: pytest --nbsmoke-run -k *.ipynb --ignore envs
-    windows: pytest --nbsmoke-run -k *.ipynb --ignore envs
+    unix: pytest --nbsmoke-run -k *.py --ignore envs
+    windows: pytest --nbsmoke-run -k *.py --ignore envs
     env_spec: test
   lint:
-    unix: pytest --nbsmoke-lint -k *.ipynb --ignore envs
-    windows: pytest --nbsmoke-lint -k *.ipynb --ignore envs
+    unix: pytest --nbsmoke-lint -k *.py --ignore envs
+    windows: pytest --nbsmoke-lint -k *.py --ignore envs
     env_spec: test
 
 variables: {}
